@@ -1237,6 +1237,7 @@ body:not(.entry-done) {
     padding: 8px 12px;
   }
 
+  
   /* Hero */
   .hero { padding: 100px 0 0; }
   .hero-bg-text { font-size: clamp(4rem, 16vw, 8rem); }
