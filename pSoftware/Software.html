@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Software — Alejandro Hernández</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap" />
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+      <!-- SVG displacement filter for liquid glass (Vadik style) -->
+      <svg class="glass-filter" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="glass-liquid" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+            <feImage href="data:image/webp;base64,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" result="map" x="0" y="0" width="200%" height="200%"></feImage>
+            <feDisplacementMap in="SourceGraphic" in2="map" scale="24" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+          </filter>
+        </defs>
+      </svg>
+      <div class="nav-container">
+        <a href="../index.html" class="nav-logo">
+          <span class="logo-text">AH</span>
+          <div class="logo-dot"></div>
+        </a>
+        <div class="nav-links" id="navLinks">
+          <a href="../index.html" class="nav-link">Inicio</a>
+          <a href="../pArte/Arte.html" class="nav-link">Arte</a>
+          <a href="" class="nav-link active">Software</a>
+        </div>
+        <div class="nav-social">
+          <a href="https://github.com/alex574r" class="nav-social-link" aria-label="GitHub" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/alejandro-hern%C3%A1ndez-4aa037230/" class="nav-social-link" aria-label="LinkedIn" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:alex574r@gmail.com" class="nav-social-link" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ===== SECTION 1: 3D Carousel ===== -->
+    <section class="loop-images">
+      <h1 class="hero-title">Software</h1>
+      <p class="hero-sub">Proyectos</p>
+      <div class="carousel-track" style="--time: 50s; --total: 10;">
+        <div class="carousel-item" style="--i: 1;">
+          <img src="../img/software/jamp.png" alt="proyecto" />
+        </div>
+        <div class="carousel-item" style="--i: 2;">
+          <img src="../img/software/nako.png" alt="proyecto" />
+        </div>
+        <div class="carousel-item" style="--i: 3;">
+          <img src="../img/software/myprogress.png" alt="proyecto" />
+        </div>
+        <div class="carousel-item" style="--i: 4;">
+          <img src="../img/software/cecytemApp.png" alt="proyecto" />
+        </div>
+        <div class="carousel-item" style="--i: 5;">
+          <img src="../img/software/13.png" alt="proyecto" />
+        </div>
+        <div class="carousel-item" style="--i: 6;">
+          <img src="../img/software/pw.png" alt="proyecto" />
+        </div>
+        <div class="carousel-item" style="--i: 7;">
+          <img src="../img/software/Horizon.png" alt="proyecto" />
+        </div>
+        <div class="carousel-item" style="--i: 8;">
+          <img src="../img/software/EASY.png" alt="proyecto" />
+        </div>
+        <div class="carousel-item" style="--i: 9;">
+          <img src="../img/software/art.png" alt="proyecto" />
+        </div>
+        <div class="carousel-item" style="--i: 10;">
+          <img src="../img/software/blik.png" alt="proyecto" />
+        </div>
+      </div>
+      <span class="scroll-down">Scroll down <span class="arrow">&#8595;</span></span>
+    </section>
+
+    <!-- ===== SECTION 2: 3D Image Motion Reveal ===== -->
+    <section class="section2">
+      <div class="image-motion">
+        <picture>
+          <img src="../img/software/gato.png" alt="proyectos" />
+        </picture>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 3: Intro + Projects ===== -->
+    <section class="section3">
+      <div class="container">
+        <h2 class="title">Mis Proyectos</h2>
+        <p class="subtitle">Software y desarrollo</p>
+        <div class="text-content">
+          <p class="text">A continuaci&oacute;n se muestran algunos de mis proyectos de software
+            favoritos en los que he trabajado durante los &uacute;ltimos a&ntilde;os.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECT 1: alex574r.github.io ===== -->
+    <section class="project-section">
+      <div class="container">
+        <div class="project-header">
+          <div class="project-icon-box">
+            <span class="project-icon-text">AH</span>
+          </div>
+          <h2 class="project-name">alex574r.github.io</h2>
+        </div>
+        <div class="project-body">
+          <div class="project-text">
+            <p><strong>alex574r.github.io</strong> es el sitio web de mi portafolio y tambi&eacute;n
+              el sitio web en el que te encuentras ahora mismo. Este proyecto fue un absoluto
+              placer de realizar y me plante&oacute; un desaf&iacute;o tanto t&eacute;cnico como
+              creativo. A principios de 2024, supe que quer&iacute;a hacer un portafolio para
+              ayudarme en mi b&uacute;squeda de empleo. Finalmente, se me ocurri&oacute; la idea
+              de este sitio a principios de agosto y comenc&eacute; a desarrollarlo a principios
+              de junio. Lo he estado desarrollando junto con mi quinto semestre en la escuela.</p>
+          </div>
+          <div class="project-media">
+            <video autoplay loop muted playsinline>
+              <source src="./assets/figma.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="project-links">
+            <span class="links-label">Links</span>
+            <a href="https://github.com/alex574r/hosting" class="project-link" target="_blank">GitHub: alex574r</a>
+          </div>
+          <p class="project-caption"><strong>Figura 1:</strong> Escena de Figma del Portal web.
+            La Escena se cre&oacute; y export&oacute; con CodiaAI by Figma.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECT 2: Potro Wallet ===== -->
+    <section class="project-section alt">
+      <div class="container">
+        <div class="project-header reverse">
+          <div class="project-icon-box pw-icon">
+            <span class="project-icon-text pw-text">PW</span>
+          </div>
+          <h2 class="project-name">Potro Wallet</h2>
+        </div>
+        <div class="project-body reverse">
+          <div class="project-media">
+            <video autoplay loop muted playsinline>
+              <source src="./assets/pw.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="project-text">
+            <p><strong>Potro Wallet</strong> es un programa enfocado en una Wallet inspirado en la
+              instituci&oacute;n donde estudio (UAEM) ya que tiene una ambientaci&oacute;n y
+              colores propios de la misma. Es un proyecto en el cual la idea se da por el a&ntilde;o
+              2023 el cual en ella puedes hacer transacciones con otras cuentas, consultar estados
+              de cuenta y por qu&eacute; no, puedes generar rendimientos con el dinero dentro de la
+              cuenta.</p>
+            <p>El programa dej&oacute; de desarrollarse en noviembre del mismo a&ntilde;o
+              concluyendo con funciones y animaciones que les agradaron mucho a los usuarios,
+              pr&oacute;ximamente volver&aacute; a ver la luz con nuevas cosas interesantes.</p>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="project-links">
+            <span class="links-label">Links</span>
+            <a href="https://github.com/alex574r/banco" class="project-link" target="_blank">GitHub: Potro Wallet</a>
+          </div>
+          <p class="project-caption"><strong>Figura 2:</strong> Escena de Potro Wallet en diferentes
+            secciones, como algunas acciones que se pueden realizar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECT 3: Trafico ===== -->
+    <section class="project-section">
+      <div class="container">
+        <div class="project-header">
+          <div class="project-icon-box trafico-icon">
+            <span class="project-icon-text trafico-text">Tr&aacute;fico</span>
+            <img class="trafico-road" src="./assets/images/08b4cb4dc8d2968f34173bb321b0f6e10c350d8a.png" alt="" />
+          </div>
+          <h2 class="project-name">Tr&aacute;fico</h2>
+        </div>
+        <div class="project-body">
+          <div class="project-text">
+            <p><strong>Tr&aacute;fico</strong> es un programa de simulaci&oacute;n de tr&aacute;fico
+              desarrollado por m&iacute; y amigos, fue uno de los proyectos m&aacute;s divertidos
+              en el que trabaj&eacute; con algunos desaf&iacute;os. Un desaf&iacute;o interesante
+              fue la ambientaci&oacute;n mediante una radio la cual cambiabas de estaci&oacute;n
+              simulando una radio real, el dise&ntilde;o Pixel Art es algo muy dif&iacute;cil de
+              hacer porque en el mundo de p&iacute;xeles se trata de una cantidad peque&ntilde;a
+              de informaci&oacute;n. Incluso un pixel mal colocado puede hacer que un sprite se
+              lea de una manera totalmente diferente e imprevista.</p>
+            <p>Para lidiar con esto, desarrollamos un algoritmo para priorizar los contornos,
+              mientras calcul&aacute;bamos el interior con un algoritmo simple de vecino m&aacute;s
+              cercano. Al hacerlo, obtuvimos un sprite relativamente legible al topar con otro
+              Sprite. Fue un desaf&iacute;o sorprendentemente dif&iacute;cil, ya que se entrecruzaba
+              tanto el arte como la programaci&oacute;n, pero fue divertido trabajar en &eacute;l
+              en general.</p>
+          </div>
+          <div class="project-media">
+            <video autoplay loop muted playsinline>
+              <source src="./assets/trafico.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        <div class="project-footer">
+          <div class="project-links">
+            <span class="links-label">Links</span>
+            <a href="https://github.com/alex574r/Simulador_de_Trafico" class="project-link" target="_blank">GitHub: Simulador de Tr&aacute;fico</a>
+          </div>
+          <p class="project-caption"><strong>Figura 3:</strong> Escena de Tr&aacute;fico, un ambiente
+            tranquilo y para relajarse viendo cochecitos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <a href="../index.html" class="nav-logo footer-logo">
+            <span class="logo-text">AH</span>
+            <div class="logo-dot"></div>
+          </a>
+          <nav class="footer-nav">
+            <a href="../index.html">Inicio</a>
+            <a href="../pArte/Arte.html">Arte</a>
+            <a href="">Software</a>
+          </nav>
+          <div class="footer-social">
+            <a href="https://github.com/alex574r" aria-label="GitHub" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/alejandro-hern%C3%A1ndez-4aa037230/" aria-label="LinkedIn" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+        <p class="footer-copy">&copy; Copyright 2024 Alejandro Hern&aacute;ndez Maya Inc.</p>
+      </div>
+    </footer>
+
+    <!-- GSAP & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Lenis smooth scroll
+        const lenis = new Lenis();
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add(time => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+
+        // 3D Image motion reveal
+        gsap.set('.image-motion', { transform: 'rotatex(90deg)' });
+        gsap.to('.image-motion', {
+          transform: 'rotatex(0deg)',
+          scrollTrigger: {
+            trigger: '.section2',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          },
+        });
+
+        // Section 3 title
+        gsap.fromTo('.title', { opacity: 0, y: 50 }, {
+          opacity: 1, y: 0, duration: 1, ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.section3',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        });
+
+        // Section 3 subtitle
+        gsap.fromTo('.subtitle', { opacity: 0, y: 30 }, {
+          opacity: 1, y: 0, duration: 0.8, delay: 0.3, ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.section3',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        });
+
+        // Section 3 text
+        gsap.fromTo('.text', { opacity: 0, y: 30 }, {
+          opacity: 1, y: 0, stagger: 0.2, duration: 0.8, ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.text-content',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        });
+
+        // Project sections — staggered reveals
+        document.querySelectorAll('.project-section').forEach(section => {
+          gsap.fromTo(section.querySelector('.project-header'), { opacity: 0, y: 40 }, {
+            opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
+            scrollTrigger: { trigger: section, start: 'top 80%', toggleActions: 'play none none reverse' },
+          });
+
+          gsap.fromTo(section.querySelector('.project-text'), { opacity: 0, y: 40 }, {
+            opacity: 1, y: 0, duration: 0.8, delay: 0.2, ease: 'power3.out',
+            scrollTrigger: { trigger: section, start: 'top 75%', toggleActions: 'play none none reverse' },
+          });
+
+          const media = section.querySelector('.project-media');
+          if (media) {
+            gsap.fromTo(media, { opacity: 0, scale: 0.92 }, {
+              opacity: 1, scale: 1, duration: 1, delay: 0.3, ease: 'power3.out',
+              scrollTrigger: { trigger: media, start: 'top 85%', toggleActions: 'play none none reverse' },
+            });
+          }
+
+          const footer = section.querySelector('.project-footer');
+          if (footer) {
+            gsap.fromTo(footer, { opacity: 0, y: 30 }, {
+              opacity: 1, y: 0, duration: 0.8, delay: 0.1, ease: 'power3.out',
+              scrollTrigger: { trigger: footer, start: 'top 90%', toggleActions: 'play none none reverse' },
+            });
+          }
+        });
+
+        // Navbar scroll
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+          navbar.classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        // Mobile menu
+        const toggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => {
+          navLinks.classList.toggle('open');
+          toggle.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            toggle.classList.remove('active');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

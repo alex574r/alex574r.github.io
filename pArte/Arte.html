@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arte — Alejandro Hernández</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap" />
+    <link rel="stylesheet" href="Estilo.css" />
+  </head>
+  <body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+      <!-- SVG displacement filter for liquid glass (Vadik style) -->
+      <svg class="glass-filter" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="glass-liquid" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+            <feImage href="data:image/webp;base64,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" result="map" x="0" y="0" width="200%" height="200%"></feImage>
+            <feDisplacementMap in="SourceGraphic" in2="map" scale="24" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+          </filter>
+        </defs>
+      </svg>
+      <div class="nav-container">
+        <a href="../index.html" class="nav-logo">
+          <span class="logo-text">AH</span>
+          <div class="logo-dot"></div>
+        </a>
+        <div class="nav-links" id="navLinks">
+          <a href="../index.html" class="nav-link">Inicio</a>
+          <a href="" class="nav-link nav-link-active">Arte</a>
+          <a href="../pSoftware/Software.html" class="nav-link">Software</a>
+        </div>
+        <div class="nav-social">
+          <a href="https://github.com/alex574r" class="nav-social-link" aria-label="GitHub" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/alejandro-hern%C3%A1ndez-4aa037230/" class="nav-social-link" aria-label="LinkedIn" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:alex574r@gmail.com" class="nav-social-link" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ===== HERO — COSMIC ORBITAL ===== -->
+    <section class="hero">
+      <!-- Cosmic container — estructura idéntica a CODE(17): 5 brazos × 10 ítems -->
+      <div class="cosmos-container">
+        <div class="cosmos">
+          <div class="cosmos-item"><img src="../img/arte/Frame1.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame6.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame2.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame8.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame12.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame13.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame7.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame3.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame14.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame11.png" alt="" /></div>
+        </div>
+        <div class="cosmos">
+          <div class="cosmos-item"><img src="../img/arte/Frame11.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame15.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame18.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame1.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame13.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame19.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame4.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame17.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame16.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame3.png" alt="" /></div>
+        </div>
+        <div class="cosmos">
+          <div class="cosmos-item"><img src="../img/arte/Frame4.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame20.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame5.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame15.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame21.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame8.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame10.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame2.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame18.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame6.png" alt="" /></div>
+        </div>
+        <div class="cosmos">
+          <div class="cosmos-item"><img src="../img/arte/Frame17.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame7.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame13.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame14.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame1.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame20.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame9.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame21.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame4.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame3.png" alt="" /></div>
+        </div>
+        <div class="cosmos">
+          <div class="cosmos-item"><img src="../img/arte/Frame2.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame7.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame4.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame15.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame9.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame16.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame1.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame3.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame12.png" alt="" /></div>
+          <div class="cosmos-item"><img src="../img/arte/Frame5.png" alt="" /></div>
+        </div>
+      </div>
+
+      <!-- Hero text centered over Cosmic -->
+      <div class="hero-text">
+        <span class="hero-tag animate-in">Portafolio Visual</span>
+        <h1 class="hero-title animate-in delay-1">
+          Arte<br /><span class="hero-sub">Intentos</span>
+        </h1>
+        <p class="hero-desc animate-in delay-2">
+          Si bien me encanta la programación y el desarrollo de software,
+          el arte, el diseño y la animación siempre ocuparán un lugar
+          especial en mí.
+        </p>
+        <a href="#galeria" class="btn btn-primary animate-in delay-3">Ver galería</a>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-hint animate-in delay-4">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-simple reveal">
+            <span class="section-tag">Historia</span>
+            <h2 class="section-title">Animación y Diseños</h2>
+            <p>En la escuela preparatoria, comencé a aprender a diseñar con Figma
+              después de interesarme en el desarrollo de programas. A medida que
+              trabajé en la creación de Programas y Videojuegos a lo largo de los
+              años aprendí Figma y Pixel Art.</p>
+            <p>A continuación, se muestran algunos proyectos y actividades que he
+              realizado a lo largo de los años para mantener viva mi faceta
+              artística. Siempre busco superarme creativamente y aprender cosas
+              nuevas.</p>
+          </div>
+          <div class="about-img reveal">
+            <img src="../img/arte/alee.png" alt="Pixel Art" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALERÍA ===== -->
+    <section class="section section-alt" id="galeria">
+      <div class="container">
+        <span class="section-tag reveal">Trabajos</span>
+        <h2 class="section-title reveal">Galería</h2>
+
+        <div class="gallery-masonry">
+          <!-- Featured piece — tall -->
+          <div class="gallery-item gallery-item-tall reveal">
+            <img src="../img/arte/polarod.png" alt="Diseño digital" />
+            <div class="gallery-info">
+              <span class="gallery-cat">Diseño Digital</span>
+              <h3>Composición Visual</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal">
+            <img src="./assets/images/3156babc6a0b1db9d62ffe03778fe02a4b84ed2f.png" alt="Ilustración" />
+            <div class="gallery-info">
+              <span class="gallery-cat">Ilustración</span>
+              <h3>Arte Conceptual</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal">
+            <img src="./assets/images/9c8230f07be16db167e1813b6a3e529043128743.png" alt="Composición" />
+            <div class="gallery-info">
+              <span class="gallery-cat">Composición</span>
+              <h3>Escena Digital</h3>
+            </div>
+          </div>
+
+          <!-- Pixel art special card -->
+          <div class="gallery-item gallery-item-pixel reveal">
+            <img src="../img/arte/pixel.png" alt="Figma" />
+            <div class="gallery-info">
+              <span class="gallery-cat">Figma</span>
+              <h3>Prototipo UI</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item gallery-item-tall reveal">
+            <img src="../img/arte/arte.png" alt="Arte Digital" />
+            <div class="gallery-info">
+              <span class="gallery-cat">Arte Digital</span>
+              <h3>Exploración</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal">
+            <img src="../img/arte/jamp.png" alt="Figma" />
+            <div class="gallery-info">
+              <span class="gallery-cat">Figma</span>
+              <h3>Prototipo UI</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal">
+            <img src="../img/arte/myprogress.png" alt="Diseño UI" />
+            <div class="gallery-info">
+              <span class="gallery-cat">Diseño UI</span>
+              <h3>Interfaz App</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal">
+            <img src="../img/arte/nako.png" alt="Arte Visual" />
+            <div class="gallery-info">
+              <span class="gallery-cat">Arte Visual</span>
+              <h3>Concepto Libre</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LINKS ===== -->
+    <section class="section" id="links">
+      <div class="container">
+        <span class="section-tag reveal">Perfiles</span>
+        <h2 class="section-title reveal">Links</h2>
+        <div class="links-grid">
+          <a href="https://www.figma.com/@alejandroherna1" class="link-card reveal" target="_blank">
+            <div class="link-icon">
+              <svg viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 28.5A9.5 9.5 0 1 1 28.5 19H19v9.5z" fill="#1ABCFE"/>
+                <path d="M19 0H9.5A9.5 9.5 0 0 0 9.5 19H19V0z" fill="#FF7262"/>
+                <path d="M19 0h9.5a9.5 9.5 0 0 1 0 19H19V0z" fill="#F24E1E"/>
+                <path d="M9.5 19H19v19a9.5 9.5 0 1 1-9.5-9.5V19z" fill="#0ACF83"/>
+                <path d="M19 28.5a9.5 9.5 0 1 1 9.5 9.5A9.5 9.5 0 0 1 19 28.5z" fill="#A259FF"/>
+              </svg>
+            </div>
+            <div class="link-body">
+              <h3>Figma</h3>
+              <p>Diseños y prototipos publicados en la comunidad de Figma.</p>
+              <span class="link-url">figma.com/@alejandroherna1 →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <a href="../index.html" class="nav-logo footer-logo">
+            <span class="logo-text">AH</span>
+            <div class="logo-dot"></div>
+          </a>
+          <nav class="footer-nav">
+            <a href="../index.html">Inicio</a>
+            <a href="">Arte</a>
+            <a href="../pSoftware/Software.html">Software</a>
+          </nav>
+          <div class="footer-social">
+            <a href="https://github.com/alex574r" aria-label="GitHub" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/alejandro-hern%C3%A1ndez-4aa037230/" aria-label="LinkedIn" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="mailto:alex574r@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+        <p class="footer-copy">© Copyright 2024 Alejandro Hernández Maya Inc.</p>
+      </div>
+    </footer>
+
+    <script>
+      // ── Navbar scroll ──
+      const navbar = document.querySelector('.navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+      });
+
+      // ── Mobile menu ──
+      const toggle = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+      toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        toggle.classList.toggle('active');
+      });
+      document.querySelectorAll('.nav-link').forEach(l => {
+        l.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          toggle.classList.remove('active');
+        });
+      });
+
+      // ── Cosmic orbital layout — idéntico a CODE(17) ──
+      function initCosmos() {
+        var cosmos = document.querySelectorAll('.cosmos');
+        var total = cosmos.length;
+        // 55vh en desktop, reducido en pantallas pequeñas
+        var vh = window.innerHeight * 0.01;
+        var dist = window.innerWidth <= 600 ? (30 * vh) + 'px'
+                 : window.innerWidth <= 900 ? (40 * vh) + 'px'
+                 : '55vh';
+
+        for (var i = 0; i < total; i++) {
+          var angle = (360 / total) * i;
+          cosmos[i].style.transform = 'rotate(' + angle + 'deg) translate(' + dist + ')';
+
+          var cosmosItems = cosmos[i].querySelectorAll('.cosmos-item');
+          for (var j = 0; j < cosmosItems.length; j++) {
+            cosmosItems[j].style.animationDelay = j * 0.5 + 's';
+          }
+        }
+      }
+
+      window.onload = initCosmos;
+      window.addEventListener('resize', initCosmos);
+
+      // ── Scroll reveal ──
+      const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+    </script>
+  </body>
+</html>

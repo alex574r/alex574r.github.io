@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alejandro Hernández Maya</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;700;800&display=swap" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+
+    <!-- ===== ENTRY ANIMATION (CODE34 inspired) ===== -->
+    <div class="revealers">
+      <div class="revealer r-1"></div>
+      <div class="revealer r-2"></div>
+    </div>
+
+    <div class="entry-images">
+      <div class="entry-img"><img src="./img/arte/alee.png" alt="" /></div>
+      <div class="entry-img"><img src="./img/arte/nako.png" alt="" /></div>
+      <div class="entry-img"><img src="./img/arte/myprogress.png" alt="" /></div>
+      <div class="entry-img"><img src="./img/arte/pixel.png" alt="" /></div>
+      <div class="entry-img"><img src="./img/arte/jamp.png" alt="" /></div>
+      <div class="entry-img entry-main"><img src="./img/software/gato.png" alt="" /></div>
+      <div class="entry-img entry-main"><img src="./img/index/arte.png" alt="" /></div>
+      <div class="entry-img entry-main"><img src="./img/index/proyectos.png" alt="" /></div>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+      <!-- SVG displacement filter for liquid glass (Vadik style) -->
+      <svg class="glass-filter" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="glass-liquid" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+            <feImage href="data:image/webp;base64,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" result="map" x="0" y="0" width="200%" height="200%"></feImage>
+            <feDisplacementMap in="SourceGraphic" in2="map" scale="24" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+          </filter>
+        </defs>
+      </svg>
+      <div class="nav-container">
+        <a href="#inicio" class="nav-logo">
+          <div class="word"><span class="logo-text">AH</span></div>
+          <div class="logo-dot"></div>
+        </a>
+        <div class="nav-links" id="navLinks">
+          <div class="nav-item-wrap"><a href="#experiencia" class="nav-link">Experiencia</a></div>
+          <div class="nav-item-wrap"><a href="#educacion" class="nav-link">Educación</a></div>
+          <div class="nav-item-wrap"><a href="#proyectos" class="nav-link">Proyectos</a></div>
+          <div class="nav-item-wrap"><a href="#contacto" class="nav-link">Contacto</a></div>
+        </div>
+        <div class="nav-social">
+          <a href="https://github.com/alex574r" class="nav-social-link" aria-label="GitHub" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/alejandro-hern%C3%A1ndez-4aa037230/" class="nav-social-link" aria-label="LinkedIn" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:alex574r@gmail.com" class="nav-social-link" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg-text">ALEJANDRO</div>
+      <!-- Canvas for rope rendering -->
+      <canvas id="ropeCanvas"></canvas>
+      <!-- Badge card positioned by JS -->
+      <div class="badge-card" id="badgeCard">
+        <div class="badge-clip"></div>
+        <img class="badge-photo" src="./img/index/perfil_a.jpg" alt="Alejandro Hernandez" />
+        <div class="badge-info">
+          <span class="badge-name">ALEJANDRO HERNANDEZ</span>
+          <span class="badge-title">FULLSTACK DEVELOPER</span>
+        </div>
+      </div>
+      <div class="container">
+        <div class="hero-actions">
+          <a href="./archivos/CV.pdf" target="_blank" class="btn btn-primary">Descargar CV</a>
+          <a href="#experiencia" class="btn btn-outline">Ver Experiencia</a>
+        </div>
+
+        <!-- Skills — Marquee carousel -->
+        <div class="skills-section">
+          <div class="skills-marquee">
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.56L11.5 24l-9.09-2.44L.5 0zm7.09 9.87L8.39 8h8.22l.2-2H6.17l.6 6.87h8.07l-.26 2.91-2.58.7-2.58-.7-.16-1.78H7.26l.32 3.56L11.5 19l3.92-1.44.52-5.69H8.59z"/></svg>HTML</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.56L11.5 24l-9.09-2.44L.5 0zm17.09 4.47H5.41l.2 2.23h10.76l-.52 5.55-4.35 1.18-4.35-1.18-.28-3.25h2.21l.14 1.65 2.28.62 2.28-.62.24-2.65H5.97l-.58-6.73H18.6l-.01 3z"/></svg>CSS</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0 0-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.569 2.082-1.006 3.776-.891 3.776-.891M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0 0 .07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.889 4.832 0 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.189-7.627"/></svg>Java</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.405-.585-.585-.765-.63-.675-1.47-1.02-2.834-.99l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.275-.81 3.51.585 4.44 1.38 1.005 3.39 1.23 3.66 2.174.24 1.14-.87 1.5-1.965 1.365-.81-.18-1.26-.57-1.755-1.305l-1.83 1.05c.21.48.45.69.81 1.11 1.74 1.74 6.075 1.65 6.855-1.005.03-.09.24-.72.045-1.665zM14.054 13.89H11.82l.015 4.695c0 1.005.06 1.92-.12 2.205-.3.63-1.08.555-1.44.435-.36-.18-.54-.42-.75-.735-.06-.09-.105-.165-.12-.165l-1.83 1.11c.3.63.765 1.17 1.38 1.515.915.51 2.145.66 3.435.195.84-.345 1.56-1.05 1.68-2.34.06-.39.03-.84.03-1.32V13.89z"/></svg>JavaScript</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.31.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.83l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.23l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v.62H6.35v2.33l.07-.01.13-.03.19-.04.26-.06.33-.06.4-.07.47-.07.54-.05.6-.04.65-.02.7.01.75.05.8.1.82.16.86.23.87.31.9.41zm-1.9 16.68L12.4 24l-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.22.41-.27.33-.32.27-.35.2-.36.15-.37.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01.21.03.28.07.32.12.35.18.36.26.36.36.35.46.32.58.28.73.21.89.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.16v-.62h5.09v-2.33l-.07.02-.13.03-.19.04-.26.05-.33.06-.4.07-.47.07-.54.06-.6.04-.65.02-.7-.01-.75-.05-.8-.1-.83-.17-.85-.23-.88-.31-.9-.41z"/></svg>Python</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91.167.29.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69.167-.29.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91zM12 19.11c-3.92 0-7.109-3.19-7.109-7.11 0-3.92 3.19-7.11 7.11-7.11a7.133 7.133 0 016.156 3.553l-3.076 1.78a3.567 3.567 0 00-3.08-1.78A3.56 3.56 0 008.444 12 3.56 3.56 0 0012 15.555a3.57 3.57 0 003.08-1.778l3.078 1.78A7.135 7.135 0 0112 19.11zm7.11-6.715h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79zm2.962 0h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79z"/></svg>C++</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 7.2a.5.5 0 0 0 .858 0l4.5-7.5A.5.5 0 0 0 16.5 0h-9a.5.5 0 0 0-.429.7l4.5 7.5zM23.5 9H.5a.5.5 0 0 0-.5.5v.5a.5.5 0 0 0 .5.5h23a.5.5 0 0 0 .5-.5v-.5a.5.5 0 0 0-.5-.5zM7 11.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 .5-.5v-12zm8 0a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 .5-.5v-12zm9 0a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 .5-.5v-12z"/></svg>Git</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/></svg>VSCode</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zM8.148 8.981H3.56c-2.476 0-4.49-2.014-4.49-4.49S1.084 0 3.56 0h4.588v8.981zM1.471 4.49c0 1.664 1.354 3.019 3.019 3.019h2.117V1.471H4.49c-1.665 0-3.019 1.355-3.019 3.019zM8.148 24H3.56c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588V24zM1.471 19.51c0 1.664 1.354 3.019 3.019 3.019h2.117v-6.038H4.49c-1.665 0-3.019 1.355-3.019 3.019zm6.677-4.02h4.588c2.476 0 4.49 2.015 4.49 4.49s-2.014 4.49-4.49 4.49H8.148v-8.98zm1.471 7.51h3.117c1.665 0 3.019-1.355 3.019-3.02s-1.354-3.019-3.019-3.019h-3.117v6.038zM15.852 15.49c2.476 0 4.49-2.014 4.49-4.49s-2.014-4.49-4.49-4.49h-4.588v8.98h4.588zm-3.117-7.51h3.117c1.665 0 3.019 1.355 3.019 3.02s-1.354 3.019-3.019 3.019h-3.117V7.98z"/></svg>Figma</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-3.78 0-7.28 1.98-9.22 5.21L.78 5.79C3.15 2.25 7.32 0 12 0s8.85 2.25 11.22 5.79l-2 2.42C19.28 4.98 15.78 3 12 3zm0 6c-1.68 0-3.22.88-4.07 2.32L5.93 9.1C7.22 7.2 9.48 6 12 6s4.78 1.2 6.07 3.1l-2 2.22A4.49 4.49 0 0012 9zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm-9.22 3.79l2-2.42C6.72 19.02 9.22 21 12 21s6.28-1.98 8.22-5.21l2 2.42C19.85 21.75 15.68 24 12 24s-8.85-2.25-11.22-5.79l2-2.42z"/></svg>SQL</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.6 0 .4 4.4.1 10.2c-.2 3.3 1.1 6.5 3.4 8.8 1.4 1.4 2.2 3.3 2.2 5.2h2.7c0-2.6-1.1-5.1-3-7-1.8-1.8-2.7-4.2-2.6-6.7C3.1 5.8 7.1 2.2 12 2.2s8.9 3.6 9.2 8.3c.1 2.5-.8 4.9-2.6 6.7-1.9 1.9-3 4.4-3 7h2.7c0-1.9.8-3.7 2.2-5.2 2.3-2.3 3.5-5.5 3.4-8.8C23.6 4.4 18.4 0 12 0zm-1.4 18.8h2.7v2.7h-2.7v-2.7zm0-14.1h2.7v11.4h-2.7V4.7z"/></svg>Kotlin</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 13.4l-2.2-2.2c.2-.5.4-1.1.4-1.7V4.7L24 .8v13.4l-2.2-.8zM12 22.1L0 11.4V.8l12 11.3v10zM12 8.9L0 .8h19.6L12 8.9z"/></svg>MySQL</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L1.75 6v12L12 24l10.25-6V6zm-1.775 18l-4.9-2.85V8.85L12 6l6.675 3.85v6.3z"/></svg>TensorFlow</span>
+            <!-- duplicate for seamless loop -->
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.56L11.5 24l-9.09-2.44L.5 0zm7.09 9.87L8.39 8h8.22l.2-2H6.17l.6 6.87h8.07l-.26 2.91-2.58.7-2.58-.7-.16-1.78H7.26l.32 3.56L11.5 19l3.92-1.44.52-5.69H8.59z"/></svg>HTML</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.56L11.5 24l-9.09-2.44L.5 0zm17.09 4.47H5.41l.2 2.23h10.76l-.52 5.55-4.35 1.18-4.35-1.18-.28-3.25h2.21l.14 1.65 2.28.62 2.28-.62.24-2.65H5.97l-.58-6.73H18.6l-.01 3z"/></svg>CSS</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0 0-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.569 2.082-1.006 3.776-.891 3.776-.891M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0 0 .07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.889 4.832 0 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.189-7.627"/></svg>Java</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.405-.585-.585-.765-.63-.675-1.47-1.02-2.834-.99l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.275-.81 3.51.585 4.44 1.38 1.005 3.39 1.23 3.66 2.174.24 1.14-.87 1.5-1.965 1.365-.81-.18-1.26-.57-1.755-1.305l-1.83 1.05c.21.48.45.69.81 1.11 1.74 1.74 6.075 1.65 6.855-1.005.03-.09.24-.72.045-1.665zM14.054 13.89H11.82l.015 4.695c0 1.005.06 1.92-.12 2.205-.3.63-1.08.555-1.44.435-.36-.18-.54-.42-.75-.735-.06-.09-.105-.165-.12-.165l-1.83 1.11c.3.63.765 1.17 1.38 1.515.915.51 2.145.66 3.435.195.84-.345 1.56-1.05 1.68-2.34.06-.39.03-.84.03-1.32V13.89z"/></svg>JavaScript</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.31.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.83l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.23l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v.62H6.35v2.33l.07-.01.13-.03.19-.04.26-.06.33-.06.4-.07.47-.07.54-.05.6-.04.65-.02.7.01.75.05.8.1.82.16.86.23.87.31.9.41zm-1.9 16.68L12.4 24l-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.22.41-.27.33-.32.27-.35.2-.36.15-.37.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01.21.03.28.07.32.12.35.18.36.26.36.36.35.46.32.58.28.73.21.89.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.16v-.62h5.09v-2.33l-.07.02-.13.03-.19.04-.26.05-.33.06-.4.07-.47.07-.54.06-.6.04-.65.02-.7-.01-.75-.05-.8-.1-.83-.17-.85-.23-.88-.31-.9-.41z"/></svg>Python</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91.167.29.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69.167-.29.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91zM12 19.11c-3.92 0-7.109-3.19-7.109-7.11 0-3.92 3.19-7.11 7.11-7.11a7.133 7.133 0 016.156 3.553l-3.076 1.78a3.567 3.567 0 00-3.08-1.78A3.56 3.56 0 008.444 12 3.56 3.56 0 0012 15.555a3.57 3.57 0 003.08-1.778l3.078 1.78A7.135 7.135 0 0112 19.11zm7.11-6.715h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79zm2.962 0h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79z"/></svg>C++</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 7.2a.5.5 0 0 0 .858 0l4.5-7.5A.5.5 0 0 0 16.5 0h-9a.5.5 0 0 0-.429.7l4.5 7.5zM23.5 9H.5a.5.5 0 0 0-.5.5v.5a.5.5 0 0 0 .5.5h23a.5.5 0 0 0 .5-.5v-.5a.5.5 0 0 0-.5-.5zM7 11.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 .5-.5v-12zm8 0a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 .5-.5v-12zm9 0a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 .5-.5v-12z"/></svg>Git</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/></svg>VSCode</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zM8.148 8.981H3.56c-2.476 0-4.49-2.014-4.49-4.49S1.084 0 3.56 0h4.588v8.981zM1.471 4.49c0 1.664 1.354 3.019 3.019 3.019h2.117V1.471H4.49c-1.665 0-3.019 1.355-3.019 3.019zM8.148 24H3.56c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588V24zM1.471 19.51c0 1.664 1.354 3.019 3.019 3.019h2.117v-6.038H4.49c-1.665 0-3.019 1.355-3.019 3.019zm6.677-4.02h4.588c2.476 0 4.49 2.015 4.49 4.49s-2.014 4.49-4.49 4.49H8.148v-8.98zm1.471 7.51h3.117c1.665 0 3.019-1.355 3.019-3.02s-1.354-3.019-3.019-3.019h-3.117v6.038zM15.852 15.49c2.476 0 4.49-2.014 4.49-4.49s-2.014-4.49-4.49-4.49h-4.588v8.98h4.588zm-3.117-7.51h3.117c1.665 0 3.019 1.355 3.019 3.02s-1.354 3.019-3.019 3.019h-3.117V7.98z"/></svg>Figma</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-3.78 0-7.28 1.98-9.22 5.21L.78 5.79C3.15 2.25 7.32 0 12 0s8.85 2.25 11.22 5.79l-2 2.42C19.28 4.98 15.78 3 12 3zm0 6c-1.68 0-3.22.88-4.07 2.32L5.93 9.1C7.22 7.2 9.48 6 12 6s4.78 1.2 6.07 3.1l-2 2.22A4.49 4.49 0 0012 9zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm-9.22 3.79l2-2.42C6.72 19.02 9.22 21 12 21s6.28-1.98 8.22-5.21l2 2.42C19.85 21.75 15.68 24 12 24s-8.85-2.25-11.22-5.79l2-2.42z"/></svg>SQL</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.6 0 .4 4.4.1 10.2c-.2 3.3 1.1 6.5 3.4 8.8 1.4 1.4 2.2 3.3 2.2 5.2h2.7c0-2.6-1.1-5.1-3-7-1.8-1.8-2.7-4.2-2.6-6.7C3.1 5.8 7.1 2.2 12 2.2s8.9 3.6 9.2 8.3c.1 2.5-.8 4.9-2.6 6.7-1.9 1.9-3 4.4-3 7h2.7c0-1.9.8-3.7 2.2-5.2 2.3-2.3 3.5-5.5 3.4-8.8C23.6 4.4 18.4 0 12 0zm-1.4 18.8h2.7v2.7h-2.7v-2.7zm0-14.1h2.7v11.4h-2.7V4.7z"/></svg>Kotlin</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 13.4l-2.2-2.2c.2-.5.4-1.1.4-1.7V4.7L24 .8v13.4l-2.2-.8zM12 22.1L0 11.4V.8l12 11.3v10zM12 8.9L0 .8h19.6L12 8.9z"/></svg>MySQL</span>
+            <span class="skill-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L1.75 6v12L12 24l10.25-6V6zm-1.775 18l-4.9-2.85V8.85L12 6l6.675 3.85v6.3z"/></svg>TensorFlow</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCIA ===== -->
+    <section class="section" id="experiencia">
+      <div class="container">
+        <h2 class="section-title reveal">Experiencia</h2>
+        <div class="exp-grid">
+          <div class="exp-card reveal">
+            <div class="exp-icon">
+              <img src="./img/index/cecytemApp.png" alt="cecytem" />
+            </div>
+            <h3>Plataforma Movil Institucional</h3>
+            <span class="exp-date">Feb — Ago 2025</span>
+            <p>Desarrollo de modulos clave para administracion de usuarios e implementacion de APIs servidor-cliente bajo metodologias agiles.</p>
+          </div>
+          <div class="exp-card reveal">
+            <div class="exp-icon">
+              <img src="./img/index/nako.png" alt="Plataforma Web NAKO" />
+            </div>
+            <h3>Plataforma Web NAKO</h3>
+            <span class="exp-date">Sep — Nov 2025</span>
+            <p>Integracion de base de datos y diseno de interfaces para sistema de control interno. Optimizacion de consultas SQL y mejora de UX.</p>
+          </div>
+          <div class="exp-card reveal">
+            <div class="exp-icon exp-icon-myprogress">
+              <img src="./img/index/myprogess.png" alt="MyProgress" />
+            </div>
+            <h3>MyProgress</h3>
+            <span class="exp-date">En desarrollo</span>
+            <p>App de monitoreo de progreso fisico con IA, que incluye modo carrera, rutinas personalizadas y seguimiento inteligente de avances corporales.</p>
+          </div>
+          <div class="exp-card reveal">
+            <div class="exp-icon">
+              <img src="./img/index/potroWallet.png" alt="potrowallet" />
+            </div>
+            <h3>PotroWallet</h3>
+            <span class="exp-date">Ago — Nov 2024</span>
+            <p>Liderazgo en desarrollo de billetera digital universitaria con modulos de seguridad para autenticacion y proteccion de datos sensibles.</p>
+          </div>
+          <div class="exp-card reveal">
+            <div class="exp-icon">
+              <img src="./img/index/microcontroladorIcon.png" alt="Microcontroladores" />
+            </div>
+            <h3>Automatizacion con Microcontroladores</h3>
+            <span class="exp-date">Jun — Jul 2023</span>
+            <p>Programacion de microcontroladores PIC en C para automatizacion y control logico, con simulaciones en Proteus previas a implementacion fisica.</p>
+          </div>
+          <div class="exp-card reveal">
+            <div class="exp-icon">
+              <img src="./img/index/13 shop.png" alt="13 Shop" />
+            </div>
+            <h3>13 Shop</h3>
+            <span class="exp-date">Dic — Ene 2026</span>
+            <p>Gestion de inventario y ventas para tienda fisica, desrrollado en kotlin, java. Con integracion de funcion de cobro compartido entre empleados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EDUCACION ===== -->
+    <section class="section section-alt" id="educacion">
+      <div class="container">
+        <h2 class="section-title reveal">Educación y Certificados</h2>
+        <div class="edu-list">
+          <div class="edu-card reveal">
+            <div class="edu-icon">
+              <img src="./img/index/CECYTEMIcon.png" alt="CECYTEM" />
+            </div>
+            <div class="edu-body">
+              <h3>CECYTEM</h3>
+              <span class="edu-year">2022</span>
+              <p>Certificado de Bachillerato con titulación en Técnico en Programación,
+                otorgado por Centro de Estudios Científicos y Tecnológicos del Estado
+                de México.</p>
+            </div>
+          </div>
+          <div class="edu-card reveal">
+            <div class="edu-icon">
+              <img src="./img/index/ConocerIcon.png" alt="CONOCER" />
+            </div>
+            <div class="edu-body">
+              <h3>CONOCER</h3>
+              <span class="edu-year">2022</span>
+              <p>Certificación de competencia Laboral en el Estándar de Competencia en
+                Desarrollo de código de Software, validado por el Consejo Nacional de
+                Normalización y Certificación de Competencias Laborales.</p>
+            </div>
+          </div>
+          <div class="edu-card reveal">
+            <div class="edu-icon">
+              <img src="./img/index/UAEMIncon.png" alt="UAPT" />
+            </div>
+            <div class="edu-body">
+              <h3>UAPT — UAEM</h3>
+              <span class="edu-year">En curso</span>
+              <p>5° Semestre de la carrera Ingeniería en Software en la Unidad Académica
+                Profesional Tianguistenco de la Universidad Autónoma del Estado de México.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROYECTOS ===== -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <h2 class="section-title reveal">Proyectos</h2>
+        <div class="projects-grid">
+          <button class="project-card reveal" onclick="location.href='pSoftware/Software.html'">
+            <div class="project-img project-img-software"></div>
+            <div class="project-overlay">
+              <div class="project-info">
+                <h3>Software</h3>
+                <span>Proyectos →</span>
+              </div>
+            </div>
+          </button>
+          <button class="project-card reveal" onclick="location.href='pArte/Arte.html'">
+            <div class="project-img project-img-arte"></div>
+            <div class="project-overlay">
+              <div class="project-info">
+                <h3>Arte</h3>
+                <span>Intentos →</span>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="section section-alt" id="contacto">
+      <div class="container">
+        <h2 class="section-title reveal">Contacto</h2>
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <p>Si tiene alguna oportunidad, no dude en comunicarse. Me encantaría
+              conversar. Puede comunicarse a través de correo electrónico personal
+              o completar el formulario.</p>
+            <div class="contact-links">
+              <a href="https://github.com/alex574r" class="contact-pill" target="_blank">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/alejandro-hern%C3%A1ndez-4aa037230/" class="contact-pill" target="_blank">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+              <a href="mailto:alex574r@gmail.com" class="contact-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                alex574r@gmail.com
+              </a>
+            </div>
+          </div>
+          <form class="contact-form reveal" onsubmit="return false;">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Primer nombre *</label>
+                <input id="nombre" type="text" placeholder="Nombre" />
+              </div>
+              <div class="form-group">
+                <label for="apellido">Apellido *</label>
+                <input id="apellido" type="text" placeholder="Apellido" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Correo Electrónico *</label>
+              <input id="email" type="email" placeholder="correo@ejemplo.com" />
+            </div>
+            <div class="form-group">
+              <label for="company">Compañía (Opcional)</label>
+              <input id="company" type="text" placeholder="Tu empresa" />
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <!-- Column 1: Identification -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Identificación</h3>
+            <p class="footer-text">Alejandro Hernández Maya</p>
+            <p class="footer-text-muted">Desarrollador FullStack</p>
+            <p class="footer-text-muted">Estado de México, MX</p>
+          </div>
+          <!-- Column 2: Channels -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Canales</h3>
+            <div class="footer-links">
+              <a href="mailto:alex574r@gmail.com" class="footer-link">Email ↗</a>
+              <a href="https://www.linkedin.com/in/alejandro-hern%C3%A1ndez-4aa037230/" target="_blank" class="footer-link">LinkedIn ↗</a>
+              <a href="https://github.com/alex574r" target="_blank" class="footer-link">GitHub ↗</a>
+            </div>
+          </div>
+          <!-- Column 3: Colophon -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Colofón</h3>
+            <p class="footer-text-muted">Hecho con: HTML / CSS / GSAP</p>
+            <p class="footer-text-muted">Tipografía: Inter / Playfair Display</p>
+            <p class="footer-text-muted">Fuentes: IBM Plex Mono</p>
+            <p class="footer-year">2026</p>
+          </div>
+        </div>
+        <p class="footer-copy">© 2026 Alejandro Hernández Maya</p>
+      </div>
+    </footer>
+
+    <!-- GSAP & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // ── Custom eases (from CODE34) ──
+        CustomEase.create("hop",  "M0,0 C0.355,0.022 0.448,0.079 0.5,0.5 0.542,0.846 0.615,1 1,1");
+        CustomEase.create("hop2", "M0,0 C0.078,0.617 0.114,0.716 0.255,0.828 0.373,0.922 0.561,1 1,1");
+
+        // ── Set initial hidden states ──
+        gsap.set(".badge-card", { opacity: 0 });
+        gsap.set(".hero-actions", { opacity: 0, y: 30 });
+        gsap.set(".skills-section", { opacity: 0, y: 30 });
+        gsap.set(".word span, .nav-item-wrap .nav-link", { y: "100%" });
+
+        // ── Phase 1: Revealers open (0 → 1.5s) ──
+        const revealerTl = gsap.timeline();
+        revealerTl
+          .to(".r-1", { clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)", duration: 1.5, ease: "hop" })
+          .to(".r-2", { clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)", duration: 1.5, ease: "hop" }, "<");
+
+        // ── Phase 2: Image sequence ──
+        const scaleTl = gsap.timeline();
+        scaleTl.to(".entry-img:first-child", { scale: 1, duration: 2, ease: "power4.inOut" });
+        document.querySelectorAll(".entry-img:not(:first-child)").forEach((img) => {
+          scaleTl.to(img, { opacity: 1, scale: 1, duration: 1.25, ease: "power3.out" }, ">-0.95");
+        });
+
+        // ── Phase 3: Flip stacked → then reveal hero ──
+        const mainTl = gsap.timeline();
+        mainTl
+          .add(revealerTl)
+          .add(scaleTl, "-=1.25")
+          .add(() => {
+            document.querySelectorAll(".entry-img:not(.entry-main)").forEach((img) => img.remove());
+            const state = Flip.getState(".entry-main");
+            const container = document.querySelector(".entry-images");
+            container.classList.add("stacked-container");
+            document.querySelectorAll(".entry-main").forEach((img, i) => {
+              img.classList.add("stacked");
+              img.style.order = i;
+            });
+            gsap.set(".entry-img.stacked", { clearProps: "transform,top,left" });
+            return Flip.from(state, { duration: 1.5, ease: "hop", absolute: true, stagger: { amount: -0.2 } });
+          })
+          .add(() => {
+            // Unlock scroll as soon as Flip ends
+            document.body.classList.add("entry-done");
+
+            // Fade out stacked images
+            gsap.to(".entry-images", {
+              opacity: 0, duration: 0.8, ease: "power2.out", delay: 0.3,
+              onComplete: () => {
+                const el = document.querySelector(".entry-images");
+                if (el) el.style.display = "none";
+              }
+            });
+
+            // Reveal badge card
+            gsap.to(".badge-card", { opacity: 1, duration: 1.2, ease: "power3.out" });
+
+            // Reveal text from clip
+            gsap.to(".word span, .nav-item-wrap .nav-link", {
+              y: 0, duration: 1.8, ease: "hop2", stagger: 0.07
+            });
+
+            // Reveal actions & skills
+            gsap.to(".hero-actions", { opacity: 1, y: 0, duration: 1, ease: "hop2", delay: 0.5 });
+            gsap.to(".skills-section", { opacity: 1, y: 0, duration: 1, ease: "hop2", delay: 0.7 });
+
+            // Fill skill bars
+            setTimeout(() => {
+              document.querySelectorAll('.skill-fill').forEach(bar => {
+                bar.style.width = bar.dataset.w + '%';
+              });
+            }, 1200);
+          });
+
+        // ── Safety fallback: unlock scroll after 8s max ──
+        setTimeout(() => {
+          if (!document.body.classList.contains("entry-done")) {
+            document.body.classList.add("entry-done");
+            document.querySelectorAll('.skill-fill').forEach(bar => {
+              bar.style.width = bar.dataset.w + '%';
+            });
+          }
+        }, 8000);
+
+        // ── Navbar scroll style ──
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+          navbar.classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        // ── Mobile menu toggle ──
+        const toggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => {
+          navLinks.classList.toggle('open');
+          toggle.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            toggle.classList.remove('active');
+          });
+        });
+
+        // ── Scroll-reveal for .reveal elements ──
+        const revealObs = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              revealObs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+        // ══════════════════════════════════════════════════════════
+        // VERLET ROPE PHYSICS + DRAGGABLE CARD (Dexter-Morgan style)
+        // ══════════════════════════════════════════════════════════
+        // True particle chain with distance constraints, canvas-rendered
+        // rope, and free-spinning card that follows the last particle.
+        // ──────────────────────────────────────────────────────────
+        ;(function() {
+          const canvas = document.getElementById('ropeCanvas');
+          const ctx = canvas.getContext('2d');
+          const card = document.getElementById('badgeCard');
+          const hero = document.querySelector('.hero');
+          if (!canvas || !card || !hero) return;
+
+          // ── Config ──
+          const NUM_SEGMENTS = 8;         // rope particles (more = more flexible)
+          const GRAVITY = 1800;           // px/s²
+          const DAMPING = 0.985;          // velocity retention per frame (Verlet)
+          const CONSTRAINT_ITERS = 20;    // constraint solver iterations
+          const CARD_W = 240;             // badge card width (px)
+          const CARD_H = 320;             // badge card height (px)
+          const ROPE_WIDTH = 14;          // visual rope width (thicker lanyard)
+          const CANVAS_PAD_X = 400;      // canvas horizontal padding
+          const CANVAS_PAD_Y = 200;      // canvas top padding
+
+          // Segment length adapts to viewport so card+rope fits above buttons
+          function calcSegLength() {
+            const bottomContent = document.querySelector('.hero > .container');
+            const reserve = bottomContent ? bottomContent.offsetHeight + 20 : 220;
+            const available = hero.offsetHeight - CARD_H - reserve;
+            const ideal = Math.max(0, available) / NUM_SEGMENTS;
+            return Math.max(12, Math.min(35, ideal));
+          }
+          let SEG_LENGTH = calcSegLength();
+
+          // ── Particles: {x, y, ox, oy, pinned} ──
+          let particles = [];
+          let anchorX = 0, anchorY = 0;
+          let dragging = false;
+          let dragParticle = -1;     // which particle is grabbed (last one = card)
+          let dragOffX = 0, dragOffY = 0;
+
+          // Mouse velocity tracking
+          let prevMX = 0, prevMY = 0, prevMT = 0;
+          let releaseVX = 0, releaseVY = 0;
+
+          // ── Independent card spin (rotation on its own axis) ──
+          let cardAngle = 0;       // current spin angle (degrees)
+          let cardAngVel = 0;      // spin angular velocity (deg/s)
+          const CARD_ANG_DAMPING = 0.92;   // spin velocity decay per frame
+          const CARD_STABILIZE = 3.0;      // self-righting torque (like Rapier rot.y * 0.25)
+
+          function initRope() {
+            SEG_LENGTH = calcSegLength();
+            anchorX = hero.offsetWidth / 2;
+            anchorY = 0;
+            particles = [];
+            for (let i = 0; i <= NUM_SEGMENTS; i++) {
+              const y = anchorY + i * SEG_LENGTH;
+              particles.push({ x: anchorX, y, ox: anchorX, oy: y, pinned: i === 0 });
+            }
+          }
+
+          function resizeCanvas() {
+            canvas.width = hero.offsetWidth + CANVAS_PAD_X * 2;
+            canvas.height = hero.offsetHeight + CANVAS_PAD_Y;
+            anchorX = hero.offsetWidth / 2;
+            anchorY = 0;
+          }
+
+          initRope();
+          resizeCanvas();
+          window.addEventListener('resize', () => { resizeCanvas(); initRope(); });
+
+          // ── Verlet integration ──
+          function simulate(dt) {
+            const dtSq = dt * dt;
+
+            for (let i = 0; i < particles.length; i++) {
+              const p = particles[i];
+              if (p.pinned) {
+                p.x = anchorX; p.y = anchorY;
+                continue;
+              }
+              // Velocity = current - old (Verlet)
+              let vx = (p.x - p.ox) * DAMPING;
+              let vy = (p.y - p.oy) * DAMPING;
+
+              // Save old
+              p.ox = p.x;
+              p.oy = p.y;
+
+              // Integrate
+              p.x += vx;
+              p.y += vy + GRAVITY * dtSq;
+            }
+
+            // ── If dragging, force last particle to mouse ──
+            if (dragging && dragParticle >= 0) {
+              const p = particles[dragParticle];
+              p.x = prevMX - dragOffX;
+              p.y = prevMY - dragOffY;
+              p.ox = p.x;
+              p.oy = p.y;
+            }
+
+            // ── Distance constraints ──
+            for (let iter = 0; iter < CONSTRAINT_ITERS; iter++) {
+              for (let i = 0; i < particles.length - 1; i++) {
+                const a = particles[i];
+                const b = particles[i + 1];
+                const dx = b.x - a.x;
+                const dy = b.y - a.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 0.001) continue;
+                const diff = (SEG_LENGTH - dist) / dist;
+                const offsetX = dx * diff * 0.5;
+                const offsetY = dy * diff * 0.5;
+
+                if (!a.pinned) { a.x -= offsetX; a.y -= offsetY; }
+                if (!b.pinned && !(dragging && i + 1 === dragParticle)) {
+                  b.x += offsetX; b.y += offsetY;
+                }
+              }
+              // Pin first particle
+              particles[0].x = anchorX;
+              particles[0].y = anchorY;
+            }
+          }
+
+          // ── Render rope on canvas ──
+          // Canvas is offset by CANVAS_PAD_X, CANVAS_PAD_Y from hero
+          function toCanvas(x, y) {
+            return { x: x + CANVAS_PAD_X, y: y + CANVAS_PAD_Y };
+          }
+
+          // Build smooth curve points for reuse
+          function getCurvePoints(steps) {
+            const pts = [];
+            for (let i = 0; i < particles.length - 1; i++) {
+              const a = toCanvas(particles[i].x, particles[i].y);
+              const b = toCanvas(particles[i+1].x, particles[i+1].y);
+              for (let s = 0; s <= steps; s++) {
+                const t = s / steps;
+                // Simple lerp per segment (smooth enough with 8 particles)
+                pts.push({ x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t });
+              }
+            }
+            return pts;
+          }
+
+          // Get point + tangent on the smooth path at parameter t (0..1)
+          function getPointOnPath(pts, t) {
+            const idx = t * (pts.length - 1);
+            const i = Math.floor(idx);
+            const f = idx - i;
+            const a = pts[Math.min(i, pts.length - 1)];
+            const b = pts[Math.min(i + 1, pts.length - 1)];
+            return {
+              x: a.x + (b.x - a.x) * f,
+              y: a.y + (b.y - a.y) * f,
+              dx: b.x - a.x,
+              dy: b.y - a.y
+            };
+          }
+
+          const STRAP_TEXT = 'AH • DEVELOPER • AH • DEVELOPER • AH • DEVELOPER • ';
+
+          function renderRope() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (particles.length < 2) return;
+
+            const curvePts = getCurvePoints(6);
+
+            // ── 1. Main strap body ──
+            ctx.beginPath();
+            ctx.moveTo(curvePts[0].x, curvePts[0].y);
+            for (let i = 1; i < curvePts.length; i++) {
+              ctx.lineTo(curvePts[i].x, curvePts[i].y);
+            }
+            // Dark base
+            ctx.strokeStyle = '#141414';
+            ctx.lineWidth = ROPE_WIDTH;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.stroke();
+
+            // ── 2. Woven texture stripes ──
+            for (let i = 0; i < curvePts.length - 1; i++) {
+              const a = curvePts[i], b = curvePts[i + 1];
+              const dx = b.x - a.x, dy = b.y - a.y;
+              const len = Math.sqrt(dx*dx + dy*dy);
+              if (len < 1) continue;
+              const nx = -dy / len;
+              const ny = dx / len;
+
+              // Alternating dark/light stripes perpendicular to rope
+              if (i % 3 === 0) {
+                ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+                ctx.lineWidth = ROPE_WIDTH * 0.8;
+                ctx.beginPath();
+                ctx.moveTo(a.x - nx * ROPE_WIDTH * 0.35, a.y - ny * ROPE_WIDTH * 0.35);
+                ctx.lineTo(a.x + nx * ROPE_WIDTH * 0.35, a.y + ny * ROPE_WIDTH * 0.35);
+                ctx.stroke();
+              }
+            }
+
+            // ── 3. Edge highlights (thin lines along the strap edges) ──
+            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+            for (const side of [-1, 1]) {
+              ctx.beginPath();
+              for (let i = 0; i < curvePts.length; i++) {
+                const p = curvePts[i];
+                // Get tangent for perpendicular
+                const next = curvePts[Math.min(i + 1, curvePts.length - 1)];
+                const dx = next.x - p.x, dy = next.y - p.y;
+                const len = Math.sqrt(dx*dx + dy*dy) || 1;
+                const nx = -dy / len * (ROPE_WIDTH * 0.45) * side;
+                const ny = dx / len * (ROPE_WIDTH * 0.45) * side;
+                if (i === 0) ctx.moveTo(p.x + nx, p.y + ny);
+                else ctx.lineTo(p.x + nx, p.y + ny);
+              }
+              ctx.stroke();
+            }
+
+            // ── 4. Text along the strap ──
+            ctx.save();
+            ctx.font = '600 5.5px "IBM Plex Mono", monospace';
+            ctx.fillStyle = 'rgba(255,255,255,0.12)';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            // Walk along the curve placing characters
+            const totalLen = curvePts.reduce((acc, p, i) => {
+              if (i === 0) return 0;
+              const prev = curvePts[i - 1];
+              return acc + Math.sqrt((p.x - prev.x)**2 + (p.y - prev.y)**2);
+            }, 0);
+
+            let charIdx = 0;
+            let distAcc = 0;
+            const charSpacing = 6;
+            for (let i = 1; i < curvePts.length; i++) {
+              const prev = curvePts[i - 1];
+              const cur = curvePts[i];
+              const segDx = cur.x - prev.x;
+              const segDy = cur.y - prev.y;
+              const segLen = Math.sqrt(segDx*segDx + segDy*segDy);
+              const segAngle = Math.atan2(segDy, segDx);
+
+              let segDist = 0;
+              while (segDist < segLen) {
+                const t = segDist / segLen;
+                const px = prev.x + segDx * t;
+                const py = prev.y + segDy * t;
+
+                ctx.save();
+                ctx.translate(px, py);
+                ctx.rotate(segAngle);
+                ctx.fillText(STRAP_TEXT[charIdx % STRAP_TEXT.length], 0, 0);
+                ctx.restore();
+
+                charIdx++;
+                segDist += charSpacing;
+                distAcc += charSpacing;
+              }
+            }
+            ctx.restore();
+
+            // ── 5. Metal clip at rope endpoint (where rope meets card) ──
+            const lastC = toCanvas(particles[particles.length - 1].x, particles[particles.length - 1].y);
+            // Outer ring
+            ctx.beginPath();
+            ctx.arc(lastC.x, lastC.y, 6, 0, Math.PI * 2);
+            ctx.fillStyle = '#444';
+            ctx.fill();
+            ctx.strokeStyle = '#555';
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            // Inner ring highlight
+            ctx.beginPath();
+            ctx.arc(lastC.x, lastC.y, 3, 0, Math.PI * 2);
+            ctx.fillStyle = '#666';
+            ctx.fill();
+
+            // ── 6. Anchor clip at top ──
+            const firstC = toCanvas(particles[0].x, particles[0].y);
+            ctx.beginPath();
+            ctx.arc(firstC.x, firstC.y, 4, 0, Math.PI * 2);
+            ctx.fillStyle = '#333';
+            ctx.fill();
+          }
+
+          // ── Position card + independent spin physics ──
+          function positionCard(dt) {
+            const last = particles[particles.length - 1];
+
+            if (!dragging) {
+              // ── Spin physics (independent of rope angle) ──
+              // Self-righting torque: pulls card back to 0° (like Dexter's rot.y * 0.25)
+              cardAngVel -= cardAngle * CARD_STABILIZE * dt;
+
+              // Angular damping (heavy, like Rapier angularDamping: 4)
+              cardAngVel *= Math.pow(CARD_ANG_DAMPING, dt * 60);
+
+              // Integrate
+              cardAngle += cardAngVel * dt;
+
+              // Snap to rest when spin energy is tiny
+              if (Math.abs(cardAngle) < 0.1 && Math.abs(cardAngVel) < 0.5) {
+                cardAngle = 0;
+                cardAngVel = 0;
+              }
+            }
+
+            // Position card: top-center of card = last particle
+            const cx = last.x - CARD_W / 2;
+            const cy = last.y;
+
+            card.style.transform = `translate(${cx}px, ${cy}px) rotate(${cardAngle}deg)`;
+          }
+
+          // ── Drag handlers ──
+          function getPointer(e) {
+            if (e.touches && e.touches.length) return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+            return { x: e.clientX, y: e.clientY };
+          }
+
+          function toLocal(px, py) {
+            // Convert page coordinates to hero-local coordinates
+            // getBoundingClientRect gives viewport-relative coords, clientX/Y are also viewport-relative
+            const rect = hero.getBoundingClientRect();
+            return { x: px - rect.left, y: py - rect.top };
+          }
+
+          function onDragStart(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const p = getPointer(e);
+            const lp = toLocal(p.x, p.y);
+
+            // Grab the last particle (the card attachment point)
+            const last = particles[particles.length - 1];
+            dragParticle = particles.length - 1;
+            dragOffX = lp.x - last.x;
+            dragOffY = lp.y - last.y;
+            dragging = true;
+            card.style.cursor = 'grabbing';
+            document.body.style.userSelect = 'none';
+
+            prevMX = lp.x;
+            prevMY = lp.y;
+            prevMT = performance.now();
+            releaseVX = 0;
+            releaseVY = 0;
+          }
+
+          function onDragMove(e) {
+            if (!dragging) return;
+            e.preventDefault();
+            const p = getPointer(e);
+            const lp = toLocal(p.x, p.y);
+            const now = performance.now();
+            const dt = Math.max(1, now - prevMT) / 1000;
+
+            // Smooth velocity tracking
+            const vx = (lp.x - prevMX) / dt;
+            const vy = (lp.y - prevMY) / dt;
+            releaseVX = releaseVX * 0.6 + vx * 0.4;
+            releaseVY = releaseVY * 0.6 + vy * 0.4;
+
+            prevMX = lp.x;
+            prevMY = lp.y;
+            prevMT = now;
+          }
+
+          function onDragEnd() {
+            if (!dragging) return;
+            dragging = false;
+            card.style.cursor = 'grab';
+            document.body.style.userSelect = '';
+
+            // Apply release velocity as momentum to last particle
+            const last = particles[particles.length - 1];
+            const scale = 0.016; // dt equivalent for velocity injection
+            last.ox = last.x - releaseVX * scale;
+            last.oy = last.y - releaseVY * scale;
+
+            // ── Inject spin from horizontal velocity ──
+            // Only spin when there's significant horizontal flick
+            // Scale: releaseVX is px/s, convert to deg/s for card spin
+            const spinThreshold = 200; // px/s minimum to trigger spin
+            if (Math.abs(releaseVX) > spinThreshold) {
+              cardAngVel = releaseVX * 0.08; // px/s → deg/s
+            }
+          }
+
+          // Events on card
+          card.addEventListener('mousedown', onDragStart);
+          card.addEventListener('touchstart', onDragStart, { passive: false });
+          window.addEventListener('mousemove', onDragMove);
+          window.addEventListener('touchmove', onDragMove, { passive: false });
+          window.addEventListener('mouseup', onDragEnd);
+          window.addEventListener('touchend', onDragEnd);
+
+          // ── Animation loop ──
+          let lastTime = performance.now();
+          function loop() {
+            const now = performance.now();
+            let dt = (now - lastTime) / 1000;
+            lastTime = now;
+            dt = Math.min(dt, 0.032); // cap at ~30fps minimum
+
+            simulate(dt);
+            renderRope();
+            positionCard(dt);
+            requestAnimationFrame(loop);
+          }
+          loop();
+        })();
+
+      });
+    </script>
+
+  </body>
+</html>
