@@ -9,23 +9,6 @@
   </head>
   <body>
 
-    <!-- ===== ENTRY ANIMATION (CODE34 inspired) ===== -->
-    <div class="revealers">
-      <div class="revealer r-1"></div>
-      <div class="revealer r-2"></div>
-    </div>
-
-    <div class="entry-images">
-      <div class="entry-img"><img src="./img/arte/alee.png" alt="" /></div>
-      <div class="entry-img"><img src="./img/arte/nako.png" alt="" /></div>
-      <div class="entry-img"><img src="./img/arte/myprogress.png" alt="" /></div>
-      <div class="entry-img"><img src="./img/arte/pixel.png" alt="" /></div>
-      <div class="entry-img"><img src="./img/arte/jamp.png" alt="" /></div>
-      <div class="entry-img entry-main"><img src="./img/software/gato.png" alt="" /></div>
-      <div class="entry-img entry-main"><img src="./img/index/arte.png" alt="" /></div>
-      <div class="entry-img entry-main"><img src="./img/index/proyectos.png" alt="" /></div>
-    </div>
-
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
       <!-- SVG displacement filter for liquid glass (Vadik style) -->
@@ -334,95 +317,11 @@
       </div>
     </footer>
 
-    <!-- GSAP & Plugins -->
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // ── Custom eases (from CODE34) ──
-        CustomEase.create("hop",  "M0,0 C0.355,0.022 0.448,0.079 0.5,0.5 0.542,0.846 0.615,1 1,1");
-        CustomEase.create("hop2", "M0,0 C0.078,0.617 0.114,0.716 0.255,0.828 0.373,0.922 0.561,1 1,1");
-
-        // ── Set initial hidden states ──
-        gsap.set(".badge-card", { opacity: 0 });
-        gsap.set(".hero-actions", { opacity: 0, y: 30 });
-        gsap.set(".skills-section", { opacity: 0, y: 30 });
-        gsap.set(".word span, .nav-item-wrap .nav-link", { y: "100%" });
-
-        // ── Phase 1: Revealers open (0 → 1.5s) ──
-        const revealerTl = gsap.timeline();
-        revealerTl
-          .to(".r-1", { clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)", duration: 1.5, ease: "hop" })
-          .to(".r-2", { clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)", duration: 1.5, ease: "hop" }, "<");
-
-        // ── Phase 2: Image sequence ──
-        const scaleTl = gsap.timeline();
-        scaleTl.to(".entry-img:first-child", { scale: 1, duration: 2, ease: "power4.inOut" });
-        document.querySelectorAll(".entry-img:not(:first-child)").forEach((img) => {
-          scaleTl.to(img, { opacity: 1, scale: 1, duration: 1.25, ease: "power3.out" }, ">-0.95");
-        });
-
-        // ── Phase 3: Flip stacked → then reveal hero ──
-        const mainTl = gsap.timeline();
-        mainTl
-          .add(revealerTl)
-          .add(scaleTl, "-=1.25")
-          .add(() => {
-            document.querySelectorAll(".entry-img:not(.entry-main)").forEach((img) => img.remove());
-            const state = Flip.getState(".entry-main");
-            const container = document.querySelector(".entry-images");
-            container.classList.add("stacked-container");
-            document.querySelectorAll(".entry-main").forEach((img, i) => {
-              img.classList.add("stacked");
-              img.style.order = i;
-            });
-            gsap.set(".entry-img.stacked", { clearProps: "transform,top,left" });
-            return Flip.from(state, { duration: 1.5, ease: "hop", absolute: true, stagger: { amount: -0.2 } });
-          })
-          .add(() => {
-            // Unlock scroll as soon as Flip ends
-            document.body.classList.add("entry-done");
-
-            // Fade out stacked images
-            gsap.to(".entry-images", {
-              opacity: 0, duration: 0.8, ease: "power2.out", delay: 0.3,
-              onComplete: () => {
-                const el = document.querySelector(".entry-images");
-                if (el) el.style.display = "none";
-              }
-            });
-
-            // Reveal badge card
-            gsap.to(".badge-card", { opacity: 1, duration: 1.2, ease: "power3.out" });
-
-            // Reveal text from clip
-            gsap.to(".word span, .nav-item-wrap .nav-link", {
-              y: 0, duration: 1.8, ease: "hop2", stagger: 0.07
-            });
-
-            // Reveal actions & skills
-            gsap.to(".hero-actions", { opacity: 1, y: 0, duration: 1, ease: "hop2", delay: 0.5 });
-            gsap.to(".skills-section", { opacity: 1, y: 0, duration: 1, ease: "hop2", delay: 0.7 });
-
-            // Fill skill bars
-            setTimeout(() => {
-              document.querySelectorAll('.skill-fill').forEach(bar => {
-                bar.style.width = bar.dataset.w + '%';
-              });
-            }, 1200);
-          });
-
-        // ── Safety fallback: unlock scroll after 8s max ──
-        setTimeout(() => {
-          if (!document.body.classList.contains("entry-done")) {
-            document.body.classList.add("entry-done");
-            document.querySelectorAll('.skill-fill').forEach(bar => {
-              bar.style.width = bar.dataset.w + '%';
-            });
-          }
-        }, 8000);
 
         // ── Navbar scroll style ──
         const navbar = document.querySelector('.navbar');
