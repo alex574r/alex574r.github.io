@@ -125,117 +125,6 @@ a.editorial-link:hover::after {
    ENTRY ANIMATION (CODE34 inspired)
    ============================================================ */
 
-/* Lock scroll during entry */
-body:not(.entry-done) {
-  overflow: hidden;
-}
-
-/* Revealer panels */
-.revealers {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  z-index: 9999;
-  pointer-events: none;
-}
-.revealer {
-  flex: 1;
-  width: 100%;
-  background-color: var(--bg);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-
-/* Entry image sequence */
-.entry-images {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  transform-origin: center center;
-  will-change: transform;
-}
-.entry-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.5);
-  width: 100%;
-  height: 100%;
-  visibility: visible;
-  will-change: transform;
-  opacity: 0;
-}
-.entry-img:first-child {
-  opacity: 1;
-}
-.entry-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Stacked layout after Flip */
-.entry-images.stacked-container {
-  position: fixed;
-  left: 2em;
-  bottom: 2em;
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-start;
-  gap: 0.75em;
-  transform: none;
-  will-change: transform;
-}
-.entry-img.stacked {
-  position: relative;
-  width: 120px;
-  height: 80px;
-  transform: none;
-  top: auto;
-  left: auto;
-  opacity: 1;
-  will-change: transform;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-}
-
-/* Text clip-path reveal system */
-.word,
-.nav-item-wrap,
-.line {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  overflow: hidden;
-}
-
-.word span,
-.nav-item-wrap .nav-link,
-.line span,
-.line p {
-  position: relative;
-  display: block;
-  transform: translateY(100%);
-  will-change: transform;
-}
-
-/* Hero actions & skills hidden until animated */
-.hero-actions {
-  opacity: 0;
-  transform: translateY(40px);
-}
-.skills-section {
-  opacity: 0;
-  transform: translateY(40px);
-}
 
 /* Scroll-reveal */
 .reveal {
@@ -323,6 +212,8 @@ body:not(.entry-done) {
   display: flex;
   align-items: center;
   gap: 32px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 /* Logo */
@@ -541,7 +432,7 @@ body:not(.entry-done) {
   align-items: center;
   justify-content: center;
   padding: 120px 0 0;
-  overflow: visible;
+  overflow: hidden;
   background: var(--c-dark);
   color: var(--c-light);
 }
@@ -563,6 +454,8 @@ body:not(.entry-done) {
   pointer-events: none;
   user-select: none;
   z-index: 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 /* Rope canvas — oversized to allow card to go off-screen */
@@ -1210,6 +1103,8 @@ body:not(.entry-done) {
   .section { padding: 72px 0; }
 
   /* Navbar */
+  .nav-container { padding: 0 16px; gap: 16px; }
+  .navbar.scrolled { margin: 5px 8px 0; }
   .nav-social { display: none; }
   .nav-toggle { display: flex; }
   .nav-links {
@@ -1237,12 +1132,12 @@ body:not(.entry-done) {
     padding: 8px 12px;
   }
 
-  
   /* Hero */
   .hero { padding: 100px 0 0; }
-  .hero-bg-text { font-size: clamp(4rem, 16vw, 8rem); }
+  .hero-bg-text { font-size: clamp(2.5rem, 13vw, 6rem); }
   .hero-actions { flex-direction: column; align-items: center; }
   .btn { width: 100%; max-width: 280px; }
+  .container { padding: 0 16px; }
 
   /* Grids */
   .exp-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -1262,15 +1157,5 @@ body:not(.entry-done) {
     grid-template-columns: 1fr;
     gap: 24px;
     text-align: center;
-  }
-
-  /* Entry stacked images smaller on mobile */
-  .entry-images.stacked-container {
-    left: 1em;
-    bottom: 1em;
-  }
-  .entry-img.stacked {
-    width: 80px;
-    height: 55px;
   }
 }
