@@ -335,11 +335,13 @@
         toggle.addEventListener('click', () => {
           navLinks.classList.toggle('open');
           toggle.classList.toggle('active');
+          navbar.classList.toggle('menu-open');
         });
         document.querySelectorAll('.nav-link').forEach(link => {
           link.addEventListener('click', () => {
             navLinks.classList.remove('open');
             toggle.classList.remove('active');
+            navbar.classList.remove('menu-open');
           });
         });
 

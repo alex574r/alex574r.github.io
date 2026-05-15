@@ -1124,6 +1124,14 @@ a.editorial-link:hover::after {
     margin-left: 0;
   }
   .nav-links.open { display: flex; }
+  .navbar.menu-open.scrolled {
+    margin: 0;
+    border-radius: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--c-white);
+    box-shadow: none;
+  }
   .nav-link {
     font-size: 1.1rem;
     font-weight: 700;
